@@ -8,4 +8,5 @@ urlpatterns = [
 
       path('finches/', views.finches_index, name='finches_index'),
 
+      path('finches/<int:finch_id>', views.finches_details, name='finches_details'),
 ]
