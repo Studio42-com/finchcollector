@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
+
+
+{% block title %}
+<title>Injured Finches</title>
+{% endblock %}
+
+
 {% block content %}
 
-<h1>Inventory of Finches</h1>
+<h1>Current listing of Injured Finches</h1>
+
+
 
 {% for finch in xyzfinches %}
 
@@ -10,12 +19,14 @@
     <div class="card">
         <div class="card-content">
             <span class="card-title">{{ finch.name }}</span>
-            <p>Native Region: {{ finch.location }}</p>
+            <p>Native Region: {{ finch.native }}</p>
             <p>Description: {{ finch.description }}</p>
 
         </div>
     </div>
 </a>
+
+
 {% endfor %}
 {% endblock %}
 
