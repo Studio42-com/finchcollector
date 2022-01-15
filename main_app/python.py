@@ -1,5 +1,5 @@
 class MyClass:
-
+    i=1234
     def __str__(self):
         return "my special class"
 

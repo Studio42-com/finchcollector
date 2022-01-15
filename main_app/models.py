@@ -11,6 +11,20 @@ class Finch(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('finches_details', kwargs={'finch_id': self.id})
+        return reverse('finches_detail', kwargs={'finch_id': self.id})
+
+#Feeding Model
+class Feeding(models.Model):
+    date = models.DateField('Feeding Date')
+    finch = models.ForeignKey(Finch, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Received food on on {self.date}"
+
+    class Meta:
+        ordering = ['-date']
+
+
+    
 
 
