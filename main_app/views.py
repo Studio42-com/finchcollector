@@ -1,6 +1,6 @@
 from sre_constants import CATEGORY_UNI_DIGIT
 from django.shortcuts import render, redirect
-# from django.http import HttpResponse
+from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Finch, Medicine
@@ -61,7 +61,7 @@ class MedicineCreate(CreateView):
 
 class MedicineUpdate(UpdateView):
   model = Medicine
-  fields = ['medicine']
+  fields = '__all__'
 
 
 class MedicineDelete(DeleteView):
@@ -84,14 +84,3 @@ class FinchDelete(DeleteView):
     model = Finch
     success_url = '/finches/'
 
-# # Display list of not currently used medical
-# def finches_detail(request, finchdetail_id):
-#   cat = Cat.objects.get(id=finchdetail_id)
-#   # Get the toys the cat doesn't have
-#   medicines_finchdetail_doesnt_have = Medicine.objects.exclude(id__in=finchdetail.medicines.all().values_list('id'))
-#   feeding_form = FeedingForm()
-#   return render(request, 'finches/detail.html', {
-#     'finchdetail': finch, 'feeding_form': feeding_form,
-#     # Add the toys to be displayed
-#     'medicines': medicines_finchdetail_doesnt_have
-#   })

@@ -14,8 +14,10 @@ urlpatterns = [
       path('finches/<int:finch_id>/assoc_medicine/<int:medicine_id>/', views.assoc_medicine, name='assoc_medicine'),
 #     path('cats/   <int:cat_id>/  assoc_toy/     <int:toy_id>     /', views.assoc_toy,      name='assoc_toy'),
 #       
-      path('toys/', views.MedicineList.as_view(), name='medicines_index'),
-      path('toys/<int:pk>/', views.MedicineDetail.as_view(), name='medicines_detail'),
-      path('toys/create/', views.MedicineCreate.as_view(), name='medicines_create'),
-      path('toys/<int:pk>/update/', views.MedicineUpdate.as_view(), name='medicines_update'),
-      path('toys/<int:pk>/delete/', views.MedicineDelete.as_view(), name='medicines_delete'),]
+      path('medicines/', views.MedicineList.as_view(), name='medicines_index'),
+      
+      path('medicines/<int:pk>/', views.MedicineDetail.as_view(), name='medicines_detail'),
+      path('medicines/create/', views.MedicineCreate.as_view(), name='medicines_create'),
+      
+      path('medicines/<int:pk>/update/', views.MedicineUpdate.as_view(), name='medicines_update'),
+      path('medicines/<int:pk>/delete/', views.MedicineDelete.as_view(), name='medicines_delete'),]

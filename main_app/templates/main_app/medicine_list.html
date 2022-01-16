@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Toy List</h1>
-
-{% for toy in toy_list %}
-  <a href="{% url 'toys_detail' toy.id %}">
+<h1>Treatment List</h1>
+Warning: not all treatments are medically sound.
+{% for medicine in medicine_list %}
+  <a href="{% url 'medicines_detail' medicine.id %}">
     <div class="card">
         <div class="card-content">
-            <span class="card-title">{{ toy.name }}</span>
-            <p>Color: {{ toy.color }}</p>
+            <span class="card-title">{{ medicine.name }}</span>
+            <p>ID: {{ medicine.id }}</p>
+
         </div>
     </div>
   </a>
