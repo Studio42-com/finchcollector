@@ -9,7 +9,6 @@ class Medicine(models.Model):
     def __str__(self):
         return self.name
 
-
     def get_absolute_url(self):
         return reverse('medicines_detail', kwargs={'pk': self.id})
 
