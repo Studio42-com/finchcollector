@@ -1,8 +1,8 @@
 # from sre_constants import CATEGORY_UNI_DIGIT
 from django.shortcuts import render, redirect
 # from django.http import HttpResponse
-from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 from .models import Finch, Medicine
 # from .models import finches as finches
 from .forms import FeedingForm
@@ -63,7 +63,7 @@ class MedicineDelete(DeleteView):
 
 class FinchCreate(CreateView):
     model = Finch
-    fields = '__all__'
+    fields = ['name', 'native', 'description']
     success_url = '/finches/'
 
 class FinchUpdate(UpdateView):
